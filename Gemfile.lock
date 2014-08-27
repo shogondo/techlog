@@ -55,6 +55,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.5)
       sprockets-rails (~> 2.0)
+    rails_config (0.4.2)
+      activesupport (>= 3.0)
     railties (4.1.5)
       actionpack (= 4.1.5)
       activesupport (= 4.1.5)
@@ -162,6 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   rails (= 4.1.5)
+  rails_config
   redcarpet
   rspec-rails
   sqlite3
