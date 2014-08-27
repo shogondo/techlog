@@ -10,7 +10,7 @@ describe ArticleService do
     context "when article found" do
       let(:id) { 946652400 }
       it { is_expected.to be_a String }
-      it { is_expected.to eq "xxx" }
+      it { is_expected.to eq "<p>xxx</p>" }
     end
 
     context "when id is nil" do
