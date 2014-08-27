@@ -1,0 +1,2 @@
+article:
+  path: <%= Rails.root.join("spec", "articles") %>
