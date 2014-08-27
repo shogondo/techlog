@@ -12,6 +12,7 @@
 /config/environments/*.local.yml
 /contents
 /coverage
+/db/*.sqlite3
 /doc
 /log/*.log
 /public/coverage
