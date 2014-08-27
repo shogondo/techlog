@@ -28,5 +28,21 @@ describe ArticlesController do
         expect(assigns[:content]).to be content
       end
     end
+
+    context "when article not found" do
+      let(:content) { {} }
+
+      before { expect(service).to receive(:find).and_raise(ResourceNotFound) }
+
+      it "responds 404 not found" do
+        subject
+        expect(response.status).to eq 404
+      end
+
+      it "renders 404 error page" do
+        subject
+        expect(response).to render_template("shared/404")
+      end
+    end
   end
 end
