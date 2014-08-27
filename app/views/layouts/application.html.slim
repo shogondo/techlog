@@ -9,4 +9,9 @@ html lang="ja"
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
   body
-    = yield
+    .container-fluid
+      .row
+        .col-sm-3
+          = render partial: "shared/profile"
+        .col-sm-9
+          = yield
