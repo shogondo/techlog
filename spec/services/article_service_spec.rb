@@ -13,6 +13,11 @@ describe ArticleService do
       it { is_expected.to eq "xxx" }
     end
 
+    context "when id is not unix epoch" do
+      let(:id) { "id" }
+      it { expect{subject}.to raise_error ResourceNotFound }
+    end
+
     context "when article not found" do
       let(:id) { 0 }
       it { expect{subject}.to raise_error ResourceNotFound }
