@@ -12,5 +12,10 @@ describe ArticleService do
       it { is_expected.to be_a String }
       it { is_expected.to eq "xxx" }
     end
+
+    context "when article not found" do
+      let(:id) { 0 }
+      it { expect{subject}.to raise_error ResourceNotFound }
+    end
   end
 end
