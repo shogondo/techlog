@@ -4,7 +4,8 @@ class ArticleService
     dir = Pathname.new(Settings[:article][:path]).join(time.year.to_s)
     path = Dir::glob(dir.join("#{params[:id]}_*.md").to_s).first
     if path
-      File.read(path).chomp
+      content = File.read(path)
+      Redcarpet::Markdown.new(Redcarpet::Render::HTML).render(content).chomp
     else
       fail ResourceNotFound
     end
