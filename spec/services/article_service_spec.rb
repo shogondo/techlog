@@ -38,8 +38,10 @@ describe ArticleService do
       let(:path) { Pathname.new(Settings.article.path).join("#{id}_abc.md") }
       before { File.write(path, content) }
       after { File.delete path }
-      it { is_expected.to be_a String }
-      it { is_expected.to eq "<p>#{content}</p>" }
+      it { is_expected.to be_a Article }
+      it { expect(subject.content).to eq content }
+      it { expect(subject.html).to eq "<p>#{content}</p>" }
+      it { expect(subject.created_at).to eq Time.zone.at(946652400) }
     end
 
     context "when id is nil" do
