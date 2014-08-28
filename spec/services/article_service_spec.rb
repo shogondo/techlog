@@ -9,8 +9,12 @@ describe ArticleService do
 
     context "when article found" do
       let(:id) { 946652400 }
+      let(:content) { "This is test content." }
+      let(:path) { Pathname.new(Settings.article.path).join("#{id}_abc.md") }
+      before { File.write(path, content) }
+      after { File.delete path }
       it { is_expected.to be_a String }
-      it { is_expected.to eq "<p>xxx</p>" }
+      it { is_expected.to eq "<p>#{content}</p>" }
     end
 
     context "when id is nil" do
