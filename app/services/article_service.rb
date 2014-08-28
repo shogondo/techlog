@@ -1,4 +1,9 @@
 class ArticleService
+  def search(params)
+    dir = Pathname.new(Settings.article.path)
+    Dir::glob(dir.join("*_*.md").to_s)
+  end
+
   def find(params)
     dir = Pathname.new(Settings.article.path)
     path = Dir::glob(dir.join("#{params[:id]}_*.md").to_s).first

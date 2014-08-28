@@ -1,6 +1,28 @@
 require "rails_helper"
 
 describe ArticleService do
+  describe "#search" do
+    subject { described_class.new.search(params) }
+
+    let(:params) { ActionController::Parameters.new(data) }
+    let(:data) { { } }
+
+    context "when article found" do
+      let(:ids) { [1388505723, 1388892896, 1389126615] }
+      let(:dir) { Pathname.new(Settings.article.path) }
+      let(:paths) { ids.map { |id| dir.join("#{id}_a.md") } }
+      before { paths.each { |path| File.write(path, "a") } }
+      after { paths.each { |path| File.delete(path) } }
+      it { is_expected.to be_a Array }
+      it { expect(subject.size).to eq 3 }
+    end
+
+    context "when article not found" do
+      it { is_expected.to be_a Array }
+      it { is_expected.to be_empty }
+    end
+  end
+
   describe "#find" do
     subject { described_class.new.find(params) }
 
