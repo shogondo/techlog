@@ -15,6 +15,9 @@ describe ArticleService do
       after { paths.each { |path| File.delete(path) } }
       it { is_expected.to be_a Array }
       it { expect(subject.size).to eq 3 }
+      it { expect(subject[0]).to be_a Article }
+      it { expect(subject[1]).to be_a Article }
+      it { expect(subject[2]).to be_a Article }
     end
 
     context "when article not found" do
