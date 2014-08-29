@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
+  def index
+    @articles = ArticleService.new.search(params)
+  end
+
   def show
-    @content = ArticleService.new.find(params)
+    @article = ArticleService.new.find(params)
   end
 end
