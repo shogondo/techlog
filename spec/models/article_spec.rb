@@ -22,6 +22,26 @@ describe Article do
     end
   end
 
+  describe "#id" do
+    subject { article.id }
+
+    let(:article) { described_class.new(path) }
+    let(:dir) { Pathname.new(Settings.article.path) }
+
+    before { File.write(path, "# head\nbody") }
+    after { File.delete path }
+
+    context "when filename is valid format" do
+      let(:path) { dir.join("1388502000_a.md") }
+      it { is_expected.to eq 1388502000 }
+    end
+
+    context "when filename is invalid format" do
+      let(:path) { dir.join("a_a.md") }
+      it { is_expected.to be_nil }
+    end
+  end
+
   describe "#content" do
     subject { article.content }
 
