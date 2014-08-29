@@ -1,7 +1,13 @@
 .row.profile
   .col-sm-12
     = image_tag "avatar.png", class: "img-circle avatar", size: "64x64"
-    p.name Shou Takenaka
+    .name
+      | Shou Takenaka
+    .icons
+      = link_to "https://twitter.com/shoutakenaka", target: "_blank" do
+        i.fa.fa-twitter
+      = link_to "https://github.com/shoutakenaka", target: "_blank" do
+        i.fa.fa-github
     .bio
       p
         | ソフトウェアエンジニア。主にWebサービス、Web API、
