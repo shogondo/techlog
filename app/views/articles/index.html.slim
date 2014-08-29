@@ -1,0 +1,10 @@
+table.table.table-hover.articles
+  thead
+    tr
+      th Date
+      th Article
+  - @articles.each do |article|
+    tr
+      td = l article.created_at.to_date
+      td
+        = link_to article.title, article_path(article.id)
