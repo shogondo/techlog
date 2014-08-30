@@ -11,6 +11,7 @@ gem "therubyracer", platforms: :ruby
 gem "uglifier"
 
 group :development do
+  gem "coveralls", require: false
   gem "rspec-rails"
   gem "simplecov", require: false
 end
