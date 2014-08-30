@@ -12,4 +12,5 @@ gem "uglifier"
 
 group :development do
   gem "rspec-rails"
+  gem "simplecov", require: false
 end
