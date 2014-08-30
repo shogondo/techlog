@@ -14,4 +14,5 @@ group :development do
   gem "coveralls", require: false
   gem "rspec-rails"
   gem "simplecov", require: false
+  gem "travis", require: false
 end
