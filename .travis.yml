@@ -4,6 +4,6 @@ rvm:
 deploy:
   provider: heroku
   app: shou-techlog
-  buildpack: https://github.com/qnyp/heroku-buildpack-ruby-bower
+  buildpack: https://github.com/qnyp/heroku-buildpack-ruby-bower.git
   api_key:
     secure: YAoNFrJrp0u5oU9w7AdvHG0pysATzHftR69tmc0ASyzFljgBZWqvICiFvpTsyFaz56CndQ9g32RZEg9s+4U+RUd+pStwL0dMtnCvDKmtCkLorLksPl+U9Vwzfbctc/WUsOl67hDA1zY7THsH+3SsbtpcfsBirys8h68eUu+Bdzk=
