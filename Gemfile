@@ -1,6 +1,5 @@
 source "https://rubygems.org"
 
-gem "bower-rails"
 gem "less-rails"
 gem "rails", "4.1.5"
 gem "rails_config"
